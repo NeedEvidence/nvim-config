@@ -47,5 +47,6 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 })
 vim.opt.signcolumn = "yes"
 vim.opt.scrolloff = 8
+vim.keymap.set("t", "<Esc>", "<C-\\><C-n>")
 
 vim.keymap.set("n", "<leader>sd", "<cmd>lua vim.diagnostic.open_float()<CR>")
