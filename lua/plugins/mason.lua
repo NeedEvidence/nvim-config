@@ -38,6 +38,7 @@ return {
 			lspconfig.emmet_language_server.setup({ capabilities })
 			lspconfig.cssls.setup({ capabilities })
 			lspconfig.css_variables.setup({ capabilities })
+			lspconfig.html.setup({ capabilities })
 			lspconfig.hls.setup({ capabilities })
 
 			vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
