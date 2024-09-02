@@ -74,7 +74,10 @@ return {
 
 			-- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
 			cmp.setup.cmdline(":", {
-				mapping = cmp.mapping.preset.cmdline(),
+				mapping = cmp.mapping.preset.cmdline({
+					["<Tab>"] = cmp.mapping.select_next_item(),
+					["<S-Tab>"] = cmp.mapping.select_prev_item(),
+				}),
 				sources = cmp.config.sources({
 					{ name = "path" },
 				}, {
