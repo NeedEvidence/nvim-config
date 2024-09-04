@@ -33,6 +33,7 @@ vim.cmd("set hlsearch")
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
 vim.cmd("set history=1000")
 vim.cmd("set autoindent")
+vim.opt.showmode = false
 vim.opt.mouse = "a"
 vim.opt.undofile = true
 vim.opt.ignorecase = true
