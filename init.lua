@@ -46,6 +46,7 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 		vim.highlight.on_yank()
 	end,
 })
+vim.opt.guicursor = ""
 vim.opt.signcolumn = "yes"
 vim.opt.scrolloff = 8
 vim.keymap.set("t", "<Esc>", "<C-\\><C-n>")
