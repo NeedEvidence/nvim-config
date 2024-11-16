@@ -115,6 +115,9 @@ return {
           { name = 'luasnip' },
           { name = 'path' },
         },
+        experimental = {
+          ghost_text = true,
+        },
       }
     end,
   },
