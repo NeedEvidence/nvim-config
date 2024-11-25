@@ -2,7 +2,8 @@ return {
   'saghen/blink.cmp',
   lazy = false, -- lazy loading handled internally
   -- optional: provides snippets for the snippet source
-  enabled = false,
+  dependencies = 'rafamadriz/friendly-snippets',
+  enabled = true,
   -- use a release tag to download pre-built binaries
   version = 'v0.*',
   -- OR build from source, requires nightly: https://rust-lang.github.io/rustup/concepts/channels.html#working-with-nightly-rust
@@ -19,12 +20,19 @@ return {
     -- your own keymap. when defining your own, no keybinds will be assigned automatically.
     keymap = {
       ['<C-space>'] = { 'show', 'show_documentation', 'hide_documentation' },
-      ['<C-e>'] = { 'hide' },
-      ['<Cr>'] = { 'select_and_accept', 'fallback' },
-      ['<Tab>'] = { 'select_next', 'fallback' },
+      ['<C-e>'] = { 'hide', 'fallback' },
+      ['<CR>'] = { 'accept', 'fallback' },
+
+      ['<C-l>'] = { 'snippet_forward', 'fallback' },
+      ['<C-h>'] = { 'snippet_backward', 'fallback' },
+
+      ['<Up>'] = { 'select_prev', 'fallback' },
+      ['<Down>'] = { 'select_next', 'fallback' },
       ['<S-Tab>'] = { 'select_prev', 'fallback' },
-      ['<C-k>'] = { 'scroll_documentation_up', 'fallback' },
-      ['<C-j>'] = { 'scroll_documentation_down', 'fallback' },
+      ['<Tab>'] = { 'select_next', 'fallback' },
+
+      ['<C-b>'] = { 'scroll_documentation_up', 'fallback' },
+      ['<C-f>'] = { 'scroll_documentation_down', 'fallback' },
     },
     highlight = {
       -- sets the fallback highlight groups to nvim-cmp's highlight groups
@@ -44,11 +52,9 @@ return {
         auto_show = true,
       },
     },
-
     -- experimental auto-brackets support
-    accept = { auto_brackets = { enabled = true } },
-
+    accept = { auto_brackets = { enabled = false } },
     -- experimental signature help support
-    -- trigger = { signature_help = { enabled = true } }
+    trigger = { signature_help = { enabled = true } },
   },
 }
