@@ -48,13 +48,34 @@ return {
         border = 'none',
       },
       documentation = {
-        border = 'rounded',
-        auto_show = true,
+        border = 'none',
       },
     },
-    -- experimental auto-brackets support
-    accept = { auto_brackets = { enabled = false } },
-    -- experimental signature help support
-    trigger = { signature_help = { enabled = true } },
+    ---@diagnostic disable-next-line: missing-fields
+    sources = {
+      completion = {
+        enabled_providers = { 'lsp', 'path', 'snippets', 'buffer' },
+      },
+    },
+    completion = {
+      documentation = {
+        auto_show = true,
+      },
+      ghost_text = {
+        enabled = false,
+      },
+      accept = {
+        auto_brackets = {
+          enabled = true,
+        },
+      },
+      trigger = {
+        show_on_blocked_trigger_characters = { ' ', '\n', '\t', '>', ',' },
+        show_on_x_blocked_trigger_characters = { "'", '"', '(', '>', '}', ',' },
+      },
+    },
+    signature = {
+      enabled = true,
+    },
   },
 }
