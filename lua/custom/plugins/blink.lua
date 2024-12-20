@@ -34,28 +34,19 @@ return {
       ['<C-b>'] = { 'scroll_documentation_up', 'fallback' },
       ['<C-f>'] = { 'scroll_documentation_down', 'fallback' },
     },
-    highlight = {
+    appearance = {
       -- sets the fallback highlight groups to nvim-cmp's highlight groups
       -- useful for when your theme doesn't support blink.cmp
       -- will be removed in a future release, assuming themes add support
+      nerd_font_variant = 'normal',
       use_nvim_cmp_as_default = true,
     },
     -- set to 'mono' for 'Nerd Font Mono' or 'normal' for 'Nerd Font'
     -- adjusts spacing to ensure icons are aligned
-    nerd_font_variant = 'normal',
-    windows = {
-      autocomplete = {
-        border = 'none',
-      },
-      documentation = {
-        border = 'none',
-      },
-    },
     ---@diagnostic disable-next-line: missing-fields
     sources = {
-      completion = {
-        enabled_providers = { 'lsp', 'path', 'snippets', 'buffer' },
-      },
+      default = { 'lsp', 'path', 'snippets', 'buffer' },
+      cmdline = {},
     },
     completion = {
       documentation = {
