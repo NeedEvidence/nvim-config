@@ -22,10 +22,8 @@ return {
       ['<C-space>'] = { 'show', 'show_documentation', 'hide_documentation' },
       ['<C-e>'] = { 'hide', 'fallback' },
       ['<CR>'] = { 'accept', 'fallback' },
-
       ['<C-l>'] = { 'snippet_forward', 'fallback' },
       ['<C-h>'] = { 'snippet_backward', 'fallback' },
-
       ['<Up>'] = { 'select_prev', 'fallback' },
       ['<Down>'] = { 'select_next', 'fallback' },
       ['<S-Tab>'] = { 'select_prev', 'fallback' },
@@ -45,7 +43,7 @@ return {
     -- adjusts spacing to ensure icons are aligned
     ---@diagnostic disable-next-line: missing-fields
     sources = {
-      default = { 'lsp', 'path', 'snippets', 'buffer' },
+      default = { 'lsp', 'path', 'snippets' },
       cmdline = {},
     },
     completion = {
@@ -66,7 +64,7 @@ return {
       },
     },
     signature = {
-      enabled = true,
+      enabled = false,
     },
   },
 }
