@@ -1,5 +1,6 @@
 return {
   'akinsho/toggleterm.nvim',
+  enabled = false,
   config = function()
     require('toggleterm').setup()
     vim.keymap.set('n', '<S-t>', function()

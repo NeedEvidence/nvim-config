@@ -43,8 +43,10 @@ return {
     -- adjusts spacing to ensure icons are aligned
     ---@diagnostic disable-next-line: missing-fields
     sources = {
-      default = { 'lsp', 'path', 'snippets' },
-      cmdline = {},
+      default = {'lsp', 'path', 'snippets'},
+    },
+    cmdline = {
+
     },
     completion = {
       documentation = {
@@ -60,8 +62,11 @@ return {
       },
       trigger = {
         show_on_blocked_trigger_characters = { ' ', '\n', '\t', '>', ',' },
-        show_on_x_blocked_trigger_characters = { "'", '"', '(', '>', '}', ',' },
+        show_on_x_blocked_trigger_characters = { "'", '"', '(', '>', '}', ',', '{', '[', ']' },
       },
+      menu = {
+        auto_show = function (ctx) return ctx.mode ~= 'cmdline' end,
+      }
     },
     signature = {
       enabled = false,
