@@ -1,9 +1,9 @@
 return {
   "folke/snacks.nvim",
-  ---@type snacks.Config
   opts = {
+    animate = {
+    },
     bigfile = {
-
     },
     terminal = {
 
@@ -11,5 +11,8 @@ return {
     lazygit = {
 
     },
+    scroll = {},
+    rename = {},
+
   },
 }
