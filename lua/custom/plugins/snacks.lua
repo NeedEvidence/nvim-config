@@ -3,7 +3,7 @@ return {
   priority = 1000,
   opts = {
     animate = {
-      enabled = true,
+      enabled = false,
     },
     bigfile = {
       enabled = true,
@@ -15,7 +15,7 @@ return {
       enabled = true,
     },
     scroll = {
-      enabled = true,
+      enabled = false,
     },
     rename = { enabled = true, },
 

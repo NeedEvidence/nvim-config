@@ -46,7 +46,7 @@ return {
       default = {'lsp', 'path', 'snippets'},
     },
     cmdline = {
-
+      enabled = false,
     },
     completion = {
       documentation = {
@@ -69,7 +69,7 @@ return {
       }
     },
     signature = {
-      enabled = false,
+      enabled = true,
     },
   },
 }
