@@ -16,6 +16,7 @@ return {
   {
     -- Main LSP Configuration
     'neovim/nvim-lspconfig',
+    event = {'BufReadPre', 'BufNewFile'},
     dependencies = {
       -- Automatically install LSPs and related tools to stdpath for Neovim
       { 'williamboman/mason.nvim', config = true }, -- NOTE: Must be loaded before dependants
@@ -26,7 +27,7 @@ return {
 
       -- Useful status updates for LSP.
       -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
-      { 'j-hui/fidget.nvim', opts = {} },
+      { 'j-hui/fidget.nvim',       opts = {} },
 
       -- Allows extra capabilities provided by nvim-cmp
       -- 'hrsh7th/cmp-nvim-lsp',
@@ -77,27 +78,27 @@ return {
           -- Jump to the definition of the word under your cursor.
           --  This is where a variable was first declared, or where a function is defined, etc.
           --  To jump back, press <C-t>.
-          map('gd', require('telescope.builtin').lsp_definitions, '[G]oto [D]efinition')
-
-          -- Find references for the word under your cursor.
-          map('gr', require('telescope.builtin').lsp_references, '[G]oto [R]eferences')
-
-          -- Jump to the implementation of the word under your cursor.
-          --  Useful when your language has ways of declaring types without an actual implementation.
-          map('gI', require('telescope.builtin').lsp_implementations, '[G]oto [I]mplementation')
-
-          -- Jump to the type of the word under your cursor.
-          --  Useful when you're not sure what type a variable is and you want to see
-          --  the definition of its *type*, not where it was *defined*.
-          map('<leader>D', require('telescope.builtin').lsp_type_definitions, 'Type [D]efinition')
-
-          -- Fuzzy find all the symbols in your current document.
-          --  Symbols are things like variables, functions, types, etc.
-          map('<leader>ds', require('telescope.builtin').lsp_document_symbols, '[D]ocument [S]ymbols')
-
-          -- Fuzzy find all the symbols in your current workspace.
-          --  Similar to document symbols, except searches over your entire project.
-          map('<leader>ws', require('telescope.builtin').lsp_dynamic_workspace_symbols, '[W]orkspace [S]ymbols')
+          -- map('gd', ('telescope.builtin').lsp_definitions, '[G]oto [D]efinition')
+          --
+          -- -- Find references for the word under your cursor.
+          -- map('gr', require('telescope.builtin').lsp_references, '[G]oto [R]eferences')
+          --
+          -- -- Jump to the implementation of the word under your cursor.
+          -- --  Useful when your language has ways of declaring types without an actual implementation.
+          -- map('gI', require('telescope.builtin').lsp_implementations, '[G]oto [I]mplementation')
+          --
+          -- -- Jump to the type of the word under your cursor.
+          -- --  Useful when you're not sure what type a variable is and you want to see
+          -- --  the definition of its *type*, not where it was *defined*.
+          -- map('<leader>D', require('telescope.builtin').lsp_type_definitions, 'Type [D]efinition')
+          --
+          -- -- Fuzzy find all the symbols in your current document.
+          -- --  Symbols are things like variables, functions, types, etc.
+          -- map('<leader>ds', require('telescope.builtin').lsp_document_symbols, '[D]ocument [S]ymbols')
+          --
+          -- -- Fuzzy find all the symbols in your current workspace.
+          -- --  Similar to document symbols, except searches over your entire project.
+          -- map('<leader>ws', require('telescope.builtin').lsp_dynamic_workspace_symbols, '[W]orkspace [S]ymbols')
 
           -- Rename the variable under your cursor.
           --  Most Language Servers support renaming across files, etc.
@@ -173,7 +174,18 @@ return {
       local servers = {
         -- clangd = {},
         -- gopls = {},
-        -- pyright = {},
+        basedpyright = {
+          settings = {
+            basedpyright = {
+              analysis = {
+                useLibraryCodeForTypes = true,
+                typeCheckingMode = 'standard',
+                diagnosticMode = 'workspace',
+
+              }
+            }
+          }
+        },
         -- rust_analyzer = {},
         -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
         --

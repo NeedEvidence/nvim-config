@@ -18,6 +18,23 @@ return {
       enabled = false,
     },
     rename = { enabled = true, },
+    image = {
+      enabled = false,
+
+    },
+    explorer = {
+
+    },
+    picker = {
+      source = {
+        explorer = {
+
+        }
+      }
+    },
+    gitbrowse = {
+      
+    }
 
   },
 }

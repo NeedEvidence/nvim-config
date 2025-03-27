@@ -50,4 +50,18 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   end,
 })
 
+vim.keymap.set("n", "<leader>me", ":MoltenEvaluateOperator<CR>", { desc = "evaluate operator", silent = true })
+vim.keymap.set("n", "<leader>mo", ":noautocmd MoltenEnterOutput<CR>", { desc = "open output window", silent = true })
+vim.keymap.set("n", "<leader>mrr", ":MoltenReevaluateCell<CR>", { desc = "re-eval cell", silent = true })
+vim.keymap.set("v", "<leader>mr", ":<C-u>MoltenEvaluateVisual<CR>gv", { desc = "execute visual selection", silent = true })
+vim.keymap.set("n", "<leader>mh", ":MoltenHideOutput<CR>", { desc = "close output window", silent = true })
+vim.keymap.set("n", "<leader>md", ":MoltenDelete<CR>", { desc = "delete Molten cell", silent = true })
+vim.keymap.set("n", "<leader>mx", ":MoltenOpenInBrowser<CR>", { desc = "open output in browser", silent = true })
+vim.keymap.set("n", "<leader>mi", ":MoltenInit<CR>", { desc = "initiate jupyter kernel", silent = true})
+vim.keymap.set("n","<leader>e", ":lua Snacks.explorer.open()<CR>", {desc = "open explorer", silent = true})
+vim.keymap.set("n","<leader>go", ":lua Snacks.gitbrowse.open()<CR>", {desc = "open git repository in browser"})
+vim.keymap.set("n","<leader>sf", ":lua Snacks.picker.pick('files')<CR>", {desc = "file picker"})
+vim.keymap.set("n","<leader>sg",":lua Snacks.picker.pick('grep')<CR>", {desc = "grep picker"})
+vim.keymap.set("n","<leader>u",":lua Snacks.picker.pick('undo')<CR>", {desc = "undo tree"})
+vim.keymap.set("n","<leader><leader>",":lua Snacks.picker.pick('buffers')<CR>", {desc = "open buffers"})
 -- vim: ts=2 sts=2 sw=2 et

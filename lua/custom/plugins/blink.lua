@@ -69,7 +69,7 @@ return {
       }
     },
     signature = {
-      enabled = true,
+      enabled = false,
     },
   },
 }
