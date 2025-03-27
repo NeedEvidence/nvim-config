@@ -64,4 +64,6 @@ vim.keymap.set("n","<leader>sf", ":lua Snacks.picker.pick('files')<CR>", {desc =
 vim.keymap.set("n","<leader>sg",":lua Snacks.picker.pick('grep')<CR>", {desc = "grep picker"})
 vim.keymap.set("n","<leader>u",":lua Snacks.picker.pick('undo')<CR>", {desc = "undo tree"})
 vim.keymap.set("n","<leader><leader>",":lua Snacks.picker.pick('buffers')<CR>", {desc = "open buffers"})
+vim.keymap.set("n","<leader>n", ":BufferNext<CR>", {desc = "move to next buffer"})
+vim.keymap.set("n","<leader>b",":BufferPrevious<CR>", {desc = "move to previous buffer"})
 -- vim: ts=2 sts=2 sw=2 et
