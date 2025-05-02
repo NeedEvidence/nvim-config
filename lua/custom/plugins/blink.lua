@@ -3,9 +3,9 @@ return {
     'L3MON4D3/LuaSnip',
     dependencies = 'rafamadriz/friendly-snippets',
     version = "v2.*",
-    config = function() 
+    config = function()
       require('luasnip.loaders.from_vscode').lazy_load()
-      require('luasnip.loaders.from_vscode').lazy_load({ paths = {'~/.config/nvim/luasnippets/'}})
+      require('luasnip.loaders.from_lua').load({ paths = { '~/.config/nvim/luasnippets/' } })
     end
 
 
@@ -14,7 +14,7 @@ return {
     'saghen/blink.cmp',
     lazy = false, -- lazy loading handled internally
     -- optional: provides snippets for the snippet source
-    dependencies = {'L3MON4D3/LuaSnip'},
+    dependencies = { 'L3MON4D3/LuaSnip' },
     enabled = true,
     -- use a release tag to download pre-built binaries
     version = 'v0.*',
@@ -54,13 +54,13 @@ return {
       -- set to 'mono' for 'Nerd Font Mono' or 'normal' for 'Nerd Font'
       -- adjusts spacing to ensure icons are aligned
       ---@diagnostic disable-next-line: missing-fields
+      snippets = { preset = 'luasnip' },
       sources = {
         default = { 'lsp', 'path', 'snippets' },
       },
       cmdline = {
         enabled = false,
       },
-      snippets = { preset = 'luasnip' },
       completion = {
         documentation = {
           auto_show = true,
