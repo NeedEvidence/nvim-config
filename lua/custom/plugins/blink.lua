@@ -74,7 +74,7 @@ return {
           },
         },
         trigger = {
-          show_on_blocked_trigger_characters = { ' ', '\n', '\t', '>', ',' },
+          show_on_blocked_trigger_characters = { ' ', '\n', '\t', '>', ',', '(', '{', '[', ']' },
           show_on_x_blocked_trigger_characters = { "'", '"', '(', '>', '}', ',', '{', '[', ']' },
         },
         menu = {

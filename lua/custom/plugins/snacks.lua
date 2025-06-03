@@ -10,6 +10,9 @@ return {
     },
     terminal = {
       enabled = true,
+      win = {
+        position = "float",
+      }
     },
     lazygit = {
       enabled = true,
