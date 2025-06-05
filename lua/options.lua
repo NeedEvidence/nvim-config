@@ -13,15 +13,15 @@ vim.opt.relativenumber = true
 vim.opt.mouse = 'a'
 
 -- Don't show the mode, since it's already in the status line
-vim.opt.showmode = false
+vim.opt.showmode = true
 
 -- Sync clipboard between OS and Neovim.
 --  Schedule the setting after `UiEnter` because it can increase startup-time.
 --  Remove this option if you want your OS clipboard to remain independent.
 --  See `:help 'clipboard'`
-vim.schedule(function()
-  vim.opt.clipboard = 'unnamedplus'
-end)
+-- vim.schedule(function()
+--   vim.opt.clipboard = 'unnamedplus'
+-- end)
 
 vim.opt.tabstop = 2
 vim.opt.shiftwidth = 2
@@ -67,8 +67,8 @@ vim.opt.scrolloff = 8
 vim.opt.guicursor = ''
 vim.loader.enable()
 vim.opt.swapfile = false
-vim.g.python3_host_prog=vim.fn.expand("~/.venvs/nvim/bin/python3")
-vim.g.molten_image_provider = "image.nvim"
+vim.g.python3_host_prog = vim.fn.expand '~/.venvs/nvim/bin/python3'
+vim.g.molten_image_provider = 'image.nvim'
 vim.g.molten_wrap_output = true
 vim.g.molten_virt_text_output = true
 vim.g.molten_virt_lines_off_by_1 = true

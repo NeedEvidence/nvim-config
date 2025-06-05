@@ -1,5 +1,4 @@
 # NVIM Config
 
-if you want jupyter support search up molten nvim tutorial and use the jupytextStart for the venv
-
+to setup molten support make sure you use kitty terminal and move jupyterStarter to a folder called ~/.venvs/ and rename jupyterStarter to nvim. Or move it to a folder and change where the config points to in the options.lua file.
 

@@ -1,7 +1,7 @@
 return {
   {
     '3rd/image.nvim',
-    enabled = true,
+    enabled = false,
     lazy = true,
     vesrion = "1.1.0",
     config = function()
@@ -20,12 +20,14 @@ return {
   {
     'benlubas/molten-nvim',
     version = "^1.0.0",
+    enabled = false,
     init = function()
     end
   },
   {
     'GCBallesteros/jupytext.nvim',
     lazy = false,
+    enabled = false,
     config = function()
       require('jupytext').setup({
         style = "markdown",
@@ -37,6 +39,7 @@ return {
   },
   {
     'quarto-dev/quarto-nvim',
+    enabled = true,
     dependencies = {
       "jmbuhr/otter.nvim",
       "nvim-treesitter/nvim-treesitter",

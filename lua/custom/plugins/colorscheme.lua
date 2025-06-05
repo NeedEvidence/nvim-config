@@ -1,22 +1,31 @@
 return {
   {
-    "sainnhe/everforest",
+    'ellisonleao/gruvbox.nvim',
+  },
+  {
+    'nyoom-engineering/oxocarbon.nvim',
+  },
+  {
+    'jacoborus/tender.vim',
+  },
+  {
+    'sainnhe/everforest',
     config = function()
       -- Optionally configure and load the colorscheme
       -- directly inside the plugin declaration.
       -- vim.g.everforest_enable_italic = true
       -- vim.cmd.colorscheme('everforest')
-    end
+    end,
   },
   {
-    "rose-pine/neovim",
-    name = "rose-pine",
+    'rose-pine/neovim',
+    name = 'rose-pine',
     config = function()
       -- vim.cmd("colorscheme rose-pine")
-    end
+    end,
   },
   {
-    "EdenEast/nightfox.nvim",
+    'EdenEast/nightfox.nvim',
   },
   { -- You can easily change to a different colorscheme.
     -- Change the name of the colorscheme plugin below, and then
@@ -79,17 +88,16 @@ return {
       -- Load the colorscheme here.
       -- Like many other themes, this one has different styles, and you could load
       -- any other, such as 'tokyonight-storm', 'tokyonight-moon', or 'tokyonight-day'.
-      vim.cmd.colorscheme 'kanagawa'
+      -- vim.cmd.colorscheme 'kanagawa'
       --
       -- -- You can configure highlights by doing something like:
-      vim.cmd.hi 'Comment gui=none'
+      -- vim.cmd.hi 'Comment gui=none'
     end,
   },
   {
-    "thesimonho/kanagawa-paper.nvim",
+    'thesimonho/kanagawa-paper.nvim',
     lazy = false,
     priority = 1000,
     opts = {},
-  }
-
+  },
 }
